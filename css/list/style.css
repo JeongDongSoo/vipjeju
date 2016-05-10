@@ -1,0 +1,295 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+@import url("default.css");
+@import url("submenu.css");
+@import url("tsc_lists.css");
+@import url("cssmenu369.css");
+@import url("dreamcodes/tsc_pagination.css");
+@import url("imageCaption.css");
+/* layout */
+#wrap {position:relative;}
+
+#container  {width:100%; margin:0 auto; }
+#container {position:relative; padding-bottom:0px; zoom:1;}
+#container:after {content:""; display:block; clear:both;}
+
+
+#content {width:1200px; margin:0 auto;}
+
+
+.rent_car_list {width:100%; clear:both; text-align:justify; font-family:'Nanum Gothic', sans-serif;letter-spacing:0px;}
+.rent_car_list ul:after {width:100%; display:inline-block; content:"."; visibility:hidden;}
+.rent_car_list li {float:left;display:inline-block; width:232px; height:286px; margin:0 10px 10px 0px;}
+.rent_car_list li.last{margin-right:0;}
+.rent_car_list li span img {width:218px; height:149px; border:1px solid #e0e0e0;}
+.rent_car_list ul.carinfo{padding:15px 0 0 0;}
+/*.rent_car_list ul.carinfo li{ display:float; height:24px !important; line-height:24px; margin:0 !important} */
+.rent_car_list ul.carinfo li{ display:float; height:133px; line-height:24px;margin-top:-122px; padding-left:10px; font-family:'Nanum Gothic', sans-serif;letter-spacing:0px;}
+.rent_car_list ul.carinfo li.name{font-size:14px;color:#444444; font-weight:bold; font-family:'Nanum Gothic', sans-serif;letter-spacing:0px;}
+.rent_car_list ul.carinfo li.info{font-size:13px;color:#666; padding:0 0 5px 10px; font-family:'Nanum Gothic', sans-serif;letter-spacing:0px;}
+.rent_car_list ul.carinfo li span.time{font-size:18px !important;color:#0072ff;vertical-align:-3px; font-family:'Nanum Gothic', sans-serif;letter-spacing:0px;}
+.rent_car_list ul.carinfo li span.price{font-size:14px !important;color:#ff0000;font-weight:bold;letter-spacing:0px; font-family:'Nanum Gothic', sans-serif;letter-spacing:0px;}
+.rent_car_list .span img {width:218px; height:149px; border:1px solid #e0e0e0;}
+
+
+.golftel_guide_con .gt_guide_con{width:893px;clear:both;padding:0 10px}*/
+
+/******************************************서브공통*************************************************************************/
+#sub_title_area{width:920px;height:48px;margin:0 19px 0 19px;}
+
+.sp_detail_btn span {width:126px; height:59px; display:inline; float:left; ;background:url(../img/golf/btns.png);margin:0 5px 0 0}
+.sp_btn_price {background-position:0px -160px !important; text-indent:-3000px;}
+.sp_btn_book {background-position:-126px -160px !important; text-indent:-3000px;}
+.sp_btn_cart {background-position:-252px -160px !important; text-indent:-3000px;}
+
+.icon_hot{width:58px;height:58px;background:url(../img/golf/icons.png) no-repeat 0 -20px;}
+#main_title{width:770px;height:58px;border-top:1px dashed #afafaf;border-bottom:1px dashed #afafaf;position:relative}
+#main_title h1{height:17px;position:absolute;top:21px;left:48px;color:#292520;font-family:"나눔고딕", NanumGothic, NanumGothicWEB, "돋움", Dotum,Helvetica,AppleGothic,Sans-serif;font-size:14px;font-weight:bold}
+#main_title .btn_rarrow{position:absolute;top:24px;right:19px;color:#292520;font-size:11px;}
+#main_title .btn_rarrow a.btn_more{display:inline-block; font-size:12px;color:#434343;line-height:11px;word-spacing:-1px;text-decoration:none !important;white-space:nowrap;padding:0 0 0 1px}
+#main_title .btn_rarrow a.btn_more span {display:block; padding:0 11px 0 0;font-size:12px;color:#434343;background:url(../img/golf/btns.png) no-repeat right -51px;}
+#main_title .btn_booking{position:absolute;top:4px;right:4px;width:159px;height:50px;}
+
+span.img_area{width:480px;overflow:hidden;display:block}
+
+.detail_con_area{margin-bottom:20px;}
+.detail_special_content{width:1200px; padding:0px}
+.detail_special_content .sp_intro_img{width:480px;float:left}
+.detail_special_content .sp_intro_img p{width:480px;height:335px;margin:0 0 0px 0; outline:solid 2px #e7e7e7;}
+.detail_special_content .sp_intro_img ul{height:50px;margin:0;padding:0;}
+.detail_special_content .sp_intro_img ul li{width:77px;height:50px;float:left;margin-right:5px}
+.detail_special_content .sp_intro_img ul li.mgNone{margin:0;}
+.detail_special_content .sp_intro_detail{width:400px;background:#f5f5f5;border:2px solid #d7d7d7;padding:6px 30px 30px 30px;float:right}
+.detail_special_content .sp_intro_detail .intro_area{margin:0 0 15px 0;padding:0;}
+.detail_special_content .sp_intro_detail .intro_area li{border-bottom:1px dashed #afafaf;vertical-align:top;padding:12px 0 11px 0}
+.detail_special_content .sp_intro_detail .intro_area li span{float:left;line-height:16px}
+.detail_special_content .sp_intro_detail .intro_area li span.info_label{font-size:12px;color:#222222;font-weight:bold;float:left;margin:0 3px 0 0}
+.detail_special_content .sp_intro_detail .intro_area li span.info_label_pkg{font-size:16px;color:#ed4646;font-weight:bold;float:left;margin-top:-1px}
+.detail_special_content .sp_intro_detail .intro_area li input{width:87px;height:18px;line-height:20px;padding:0 0 0 3px;border:1px solid #dedede;color:#222222;margin:-3px 0 0 0;float:left;display:inline}
+.detail_special_content .sp_intro_detail .intro_area li select{color:#222222;margin:-2px 5px 0 0}
+.detail_special_content .sp_intro_detail .intro_area li span.info_cal{display:inline;margin:3px 5px 0 5px}
+.detail_special_content .sp_intro_detail .intro_area li .booking_label{float:left;display:block;}
+.detail_special_content .sp_intro_detail .intro_area li .booking_label li{width:100%;margin:0 !important;padding:0 0 5px 0 !important;border:none !important;position:relative}
+.detail_special_content .sp_intro_detail .intro_area li .booking_label li a{position:absolute;top:-3px;}
+.detail_special_content .sp_intro_detail .intro_area li:after{clear:both;content:"";display:block}
+
+.detail_special_content .sp_intro_detail .btn_area {width:400px;}
+.detail_special_content .sp_price_table{width:400px;border-top:1px solid #1f1f1f;}
+.detail_special_content .sp_price_table th{height:30px;background:#ebebeb;font-weight:normal;text-align:center;line-height:30px}
+.detail_special_content .sp_price_table th.text_price{color:#ff3939;}
+.detail_special_content .sp_price_table .border_right{border-right:1px solid #cecece}
+.detail_special_content .sp_price_table td{height:31px;border-bottom:1px dashed #afafaf;line-height:31px;}
+.detail_special_content .sp_price_table td.text_price{color:#ff3939;font-weight:bold;text-align:center}
+.detail_special_content .sp_guide{width:400px;}
+.detail_special_content .sp_guide li{background:url(../img/common/icons.png) no-repeat -80px -18px;padding:0 0 0 12px;margin:0 0 7px 0}
+
+.detail_special_content01{width:1200px; margin-top:20px; margin-bottom:20px;}
+.detail_special_content01 .borderNone{border-bottom:none}
+.detail_special_content01 .sp_detail_title{width:770px;background:url(../img/sub/sp_title_bg.png) no-repeat 0 0;border-bottom:1px dashed #afafaf;padding:0 0 1px 10px;font-family:"나눔고딕", NanumGothic, NanumGothicWEB, "돋움", Dotum,Helvetica,AppleGothic,Sans-serif;font-weight:bold;font-size:20px;margin:1px 0 0px 0;color:#000}
+.detail_special_content01 .sp_detail_title span{line-height:50px !important;font-family:"굴림","돋움" !important;font-weight:bold;font-size:12px !important;color:#222; margin-left:30px;}
+
+.booking_detail_con{width:770px;margin:auto;padding:0px 0 0 0;text-align:left}
+.booking_detail_con img{padding:0px 0;display:block}
+.booking_detail_con p{color:#606060;line-height:18px;}
+.booking_detail_con p strong{color:#c00000;font-weight:normal}
+.booking_detail_con:after{clear:both;content:"";display:block}
+
+.booking_detail_house{673px;height:444px;margin:0 0 9px 0;}
+.booking_detail_house_list{674px;height:157px;}
+.booking_detail_house_list li{float:left;margin:0 1px 0 0;}
+
+.booking_detail_guide_area{width:958px;background:#f8f8f8; margin-top:20px; border:2px solid #aec539;}
+.booking_detail_guide_con .booking_detail_guide{width:300px;background:#f8f8f8;float:left; padding:20px;}
+.booking_detail_guide_con .booking_detail_guide p.label_title{color:#0c0c0c;border-bottom:2px solid #1f1f1f;font-weight:bold;margin-bottom:10px;min-width:99px;width:99px;height:28px;}
+/*.booking_detail_guide_con .booking_detail_guide .bk_guide{width:350px;} */
+
+.booking_detail_guide_con .booking_detail_guide01{width:600px;float:left; border-left:1px solid #ddd;}
+.booking_detail_guide_con .booking_detail_guide01 dt{color:#222;font-weight:bold;padding-top:20px; padding-left:10px;}
+.booking_detail_guide_con .booking_detail_guide01 dt strong{font-weight:normal !important}
+.booking_detail_guide_con .booking_detail_guide01 dt strong.text_red{font-weight:normal !important; color:#ff0000}
+.booking_detail_guide_con .booking_detail_guide01 dt.dtMg{margin-top:10px !important}
+.booking_detail_guide_con .booking_detail_guide01 dd{color:#222;line-height:18px;margin:0 0 0 0px; padding-left:10px;}
+.booking_detail_guide_con .booking_detail_guide01 dd strong.text_green{color:#5a8c02;font-weight:normal !important}
+.booking_detail_guide_con:after{content:"";clear:both;display:block}
+
+.detail_lodging_con{width:768px;border:1px solid #d7d7d7;background:#f9f9f9;margin:0 auto 20px auto}
+.detail_lodging_con .img_area{width:351px;height:265px;border:9px solid #d7d7d7;float:left}
+.detail_lodging_con .intro_detail{width:370px;float:right;margin:20px 28px 0 0;}
+.detail_lodging_con .intro_detail .intro_area{width:370px;margin:0 0 15px 0;padding:0;}
+.detail_lodging_con .intro_detail .intro_area li{border-bottom:1px dashed #afafaf;vertical-align:top;padding:12px 0 11px 0;}
+.detail_lodging_con .intro_detail .intro_area li span.info_label{width:65px;font-size:12px;color:#222222;font-weight:bold;float:left;margin:0 3px 0 0}
+.detail_lodging_con .intro_detail .intro_area li span.info_label_01{width:124px;font-size:12px;float:left}
+.detail_lodging_con .intro_detail .intro_area li span.info_label_02{width:159px;font-size:12px;float:left}
+.detail_lodging_con .intro_detail .intro_area li:after{clear:both;content:"";display:block}
+.detail_lodging_con .intro_detail .intro_keypoint{font-weight:bold;color:#2594fb;background:url(../img/common/icons.png) no-repeat -100px -80px;padding:0 0 0 23px;display:block;margin:0 0 13px 0}
+.detail_lodging_con .intro_detail .intro_descript{line-height:18px;display:block}
+ 
+.detail_more_con{width:708px;border:1px solid #d7d7d7;position:relative;margin:0 auto;padding:30px;line-height:18px}
+.detail_more_con strong{font-weight:normal;color:#ff3939}
+.detail_more_con .lodging_flag_intro{width:56px;height:56px;top:0;right:0;position:absolute;background:url(/img/common/icons.png) no-repeat -160px -100px;text-indent:-9999em}
+.detail_more_con .lodging_flag_etc{width:56px;height:56px;top:0;right:0;position:absolute;background:url(/img/common/icons.png) no-repeat -220px -100px;text-indent:-9999em}
+.detail_more_con .borderNone{border-top:none;}
+
+.detail_lodging_con:after{clear:both;content:"";display:block}
+
+.detail_lodging_room{width:770px; margin-top:10px;}
+.detail_lodging_room .room_title{font-weight:bold;font-size:14px;color:#222;padding:12px 0 7px 0;background:url(../img/sub/sp_lodging_room_line.png) no-repeat 0 0}
+.detail_lodging_room .room_title_type{width:700px;font-size:11px;color:#666;padding:0 0 25px 0;}
+.detail_lodging_room .room_img_area{width:370px;height:337px;float:left}
+.detail_lodging_room .room_img_area p{width:370px;height:275px;margin:0 0 5px 0;}
+.detail_lodging_room .room_img_area ul{width:324px;height:55px;margin:0 auto}
+.detail_lodging_room .room_img_area ul li{width:73px;height:55px;padding:0 4px;float:left}
+.detail_lodging_room .room_detail_area{width:360px; float:left; margin-left:30px;}
+.detail_lodging_room .room_detail_area .borderTop{border-top:2px solid #000000;}
+
+.detail_lodging_room .room_detail_area th{width:77px;border-right:1px solid #d4d4d4;border-bottom:1px solid #d4d4d4;background:url(../img/sub/room_table_bg.png) no-repeat 0 50%;padding:0 0 0 10px}
+.detail_lodging_room .room_detail_area td{border-bottom:1px solid #d4d4d4;padding:9px 6px 10px 10px;line-height:18px}
+.detail_lodging_room:after{clear:both;content:"";display:block}
+
+.detail_car_img{width:200px;height:150px;float:left;margin:0px 0 0px 0px;}
+.detail_car_select{width:500px;float:left;margin:0 20px 0 20px}
+.detail_car_select .borderBtm{border-bottom:1px solid #d3d3d3}
+.detail_car_select p{padding:10px 0 13px 11px;color:#626262}
+.detail_car_select strong{color:#de0e9a;font-weight:normal}
+.detail_car_select ul{width:500px;padding:3px 0 10px 11px;}
+.detail_car_select ul li{height:11px;padding:7px 0 6px 0;color:#626262;position:relative}
+.detail_car_select ul li span.formPd{padding:-10px 0 0 0;}
+.detail_car_select ul li span.label_title{color:#5f5f5f;font-weight:bold;display:inline;margin:0 10px 0 0}
+.detail_car_select ul li input{border:1px solid #999999;width:71px;height:18px;line-height:20px;text-align:center;margin:-5px 5px 0 0}
+.detail_car_select ul li select{margin:-3px 0 0 0}
+.detail_car_select ul li.lastMg{padding:0 0 10px 0}
+
+.sp_detail_btn span {width:126px; height:59px; display:inline; float:right; ;background:url(../img/common/btns.png);margin:0 5px 0 0}
+.sp_btn_price {background-position:0px -160px !important; text-indent:-3000px;}
+.sp_btn_book {background-position:-126px -160px !important; text-indent:-3000px;}
+.sp_btn_cart {background-position:-252px -160px !important; text-indent:-3000px;}
+
+.inquiryForm {width:1200px; margin-bottom:20px;}
+.inquiryForm * {vertical-align:middle;}
+.inquiryForm th,
+.inquiryForm td {padding:5px 10px; text-align:left; border:1px solid #ccc;}
+.inquiryForm th {font-weight:normal; background:#fafafa;}
+.inquiryForm span.essential {color:#ff0000;}
+.inquiryForm ul li {padding:3px 0;}
+.inquiryForm ul span {display:inline-block;}
+.inquiryForm select {height:21px;}
+.inquiryForm input.inputText,
+.inquiryForm textarea {width:97%; border:1px solid #ddd;}
+
+.product-view-head {width:100%; height:34px; margin-bottom:10px; overflow:hidden; }
+.product-view-head h3 {float:left; padding-left:10px; line-height:34px; font-size:16px; color:#333;}
+.product-view-content {width:100%; overflow:hidden; margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid #d9d9d9;}
+.product-view-content div.thumb {float:left;}
+.product-view-content div.thumb div.output {}
+.product-view-content div.thumb ul {padding:10px 0; text-align:center; background:#e3e2dc;}
+.product-view-content div.thumb ul li {display:inline; padding:0 2px;}
+.product-view-content div.fRight {width:435px;}
+.product-view-content div.fRight table {width:100%; margin-bottom:15px;}
+.product-view-content div.fRight table th,
+.product-view-content div.fRight table td {padding:5px 0; text-align:left; vertical-align:top;}
+.product-view-content div.fRight table th {padding-left:8px; font-weight:normal; background:url(../img/common/bu_product-search-form.gif) no-repeat 0 12px;}
+.product-view-content div.fRight table td.price {padding-top:3px; font-weight:bold; font-size:14px; color:#000;}
+.product-view-content div.fRight div.price-apply {margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #d9d9d9;}
+.product-view-content div.fRight p.price-apply-help {padding:10px 0 0 0; font-size:11px;}
+.product-view-content div.fRight p.price-apply-help span {color:#ff5a00;}
+.product-view-content div.fRight div.btn {text-align:center;}
+.product-view-text {margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid #d9d9d9;}
+
+.bustaxiViewTop {width:100%; margin-bottom:10px; *zoom:1;}
+.bustaxiViewTop:after {content:""; display:block; clear:both;}
+.bustaxiViewTop h3 {height:50px; line-height:50px; margin-bottom:10px; padding-left:30px; font-size:14px; color:#d96a1d; border:1px solid #ddd; border-left:0; border-right:0; background:url(./img/common/buTitle.gif) no-repeat 0 center;}
+.bustaxiViewTop div.thumb {display:inline; float:left; width:480px; height:300px;}
+.bustaxiViewTop div.thumb ul {width:278px; height:54px; padding-top:4px; text-align:center; background:#fff; border:1px solid #e5dfd5;}
+.bustaxiViewTop div.thumb ul li {display:inline; padding:0 1px;}
+.bustaxiViewTop div.thumb ul li img {width:57px; height:45px; padding:1px; border:1px solid #dadada;}
+.bustaxiViewTop div.thumb #imagePreview_output {width:470px; height:340px; margin-bottom:8px; padding:4px; border:1px solid #e5dfd5; background:#fff;}
+.bustaxiViewTop div.thumb #imagePreview_output img {width:470px; height:340px;}
+.bustaxiViewTop div.fRight {float:right; width:460px;}
+.bustaxiViewTop ul.info {width:400px; height:206px; margin-bottom:10px; padding:10px; background:url(img/rentalcar/bgRentalcarView.gif) no-repeat;}
+.bustaxiViewTop ul.info * {vertical-align:middle;}
+.bustaxiViewTop ul.info li {padding:3px 0;}
+.bustaxiViewTop ul.info span.title {display:inline-block; width:55px; padding-left:8px; background:url(img/common/productSearchTitBu.gif) no-repeat left center;}
+.bustaxiViewTop ul.info select {height:21px;}
+.bustaxiViewTop ul.info input.btn {position:absolute; top:10px; right:10px;}
+.bustaxiViewTop ul.info em {color:#a5320a;}
+.bustaxiViewTop ul.info strong.carName {color:#d96a1d; font-size:14px;}
+.bustaxiViewTop ul.info strong.price {color:#e17b44;}
+.bustaxiViewTop ul.info span.carinfo {color:#238f7f; font-size:11px;}
+.bustaxiViewTop div.btn {float:right; margin-right:10px;}
+
+.basicList2 {width:98%; margin-bottom:15px; border-top:1px solid #777777; border-right:1px solid #BBB;}
+.basicList2 th,
+.basicList2 td {padding:5px; text-align:center; border-bottom:1px solid #BBB; border-left:1px solid #BBB; background-color:#fff;}
+.basicList2 thead th,
+.basicList2 tbody th {background-color:#f9f9f9; font-size:11px;}
+.basicList2 tfoot th {font-size:11px;}
+.basicList2 td.left {text-align:left;}
+.basicList2 td.right {padding-right:1em;text-align:right;}
+.basicList2 span.totalPrice { color:#ff0000; font-size:2.2em; font-family:"Georgia",Dotum,돋움; vertical-align:middle; padding-top:4px; }
+
+.basicList6 {width:100%; margin-bottom:15px; border-top:1px solid #777777; border-right:1px solid #BBB; border-bottom:1px solid #777777; font-family:'NanumGothic';}
+.basicList6 thead {background-color:#e6eeee;}
+.basicList6 tr:hover {background-color:#EEE6E6;}
+.basicList6 th,
+.basicList6 td {padding:5px; text-align:center; border-bottom:1px solid #BBB; border-left:1px solid #BBB; vertical-align:top; }
+.basicList6 thead th,
+.basicList6 tbody th {background-color:#e6eeee; font-size:14px;}
+.basicList6 tfoot th {background-color:#f7f7f7; border-bottom:2px solid #777;}
+.basicList6 tfoot td {background-color:#f7f7f7; border-bottom:2px solid #777; line-height:160%; }
+.basicList6 td.left {text-align:left;}
+.basicList6 td.ok {color:#666; font-size:11px;}
+.basicList6 td.no {color:#999; font-size:11px;}
+.basicList6 td.right {padding-right:1em;text-align:right;}
+.basicList6 .totalPrice {color:#000; font-size:16px; line-height:18px; font-family:Georgia, Dotum,돋움;}
+
+
+
+/* 체크 포인트 */
+.check_point	{width:98%; }
+.check_point	.tit	{position:absolute; top:28px; left:27px;}
+
+/* page top down button */
+.page_top_down{position:fixed;right:10px;bottom:10px;z-index:1}
+.page_top_down.min_fixed{right:auto;left:0;margin-left:1200px}
+.page_top_down a{display:block;width:40px;height:40px;background:url( ../img/common/page_top_down.png ) no-repeat -290px 0;text-indent:-9999px}
+/*.page_top_down a{display:block;width:40px;height:40px;background:url( ../img/common/page_top_down.png ) no-repeat -280px 0px;text-indent:-9999px}*/
+.page_top_down a.down{margin-top:1px;background-position:-290px -45px}
+.page_top_down a.top:hover{background-position:-335px 0}
+.page_top_down a.down:hover{background-position:-335px -45px}
+
+#gogo {border-bottom:2px solid #dedede; padding-bottom:20px;}
+
+span.guide-memo { bold; color: #901C53; }
+span.guide-memo-date { font-weight: bold; color: #901C53; }
+
+/*.greeting{padding-top:28px;line-height:26px}*/
+.greeting {margin-top:22px; line-height:14px;}
+.greeting p.noline{background:none}
+
+.main-product-list5 {width:100%; clear:both;}
+.main-product-list5 {text-align:justify}
+.main-product-list5 ul:after {width:100%; display:inline-block; content:"."; visibility:hidden;}
+.main-product-list5 li {display:inline-block; border:1px solid #dedede; width:310px; height:360px; margin-bottom:10px;}
+.main-product-list5 li:hover {outline:2px solid #af2468;}
+.main-product-list5 p img {padding-top:10px; padding-bottom:20px; width:284px; height:200px; padding-right:4px}
+.main-product-list5 h2 {margin-bottom:10px; margin-top:20px;}
+.main-product-list5 span.location {padding-left:13px; color:#999;}
+.main-product-list5 span.title {clear:both; width:284px; padding:0 0 0 14px; text-align:center; color:#000; font-size:1.2em; font-family:'NanumGothic'; font-weight:900}
+.main-product-list5 span.price {display:block; padding-left:13px; padding-top:20px; font-size:1.5em; color:red; font-weight:900; text-align:center; font-family:Aria, sans-serif}
+.main-product-list5 .line {border:1px solid #dedede; padding-top:10px; padding-bottom:10px; width:90%;}
+.main-product-list5 p.bottom {margin-top:20px; float:right; padding-right:13px;}
+
+#rental_category {width:1200px; margin-top:-50px;}
+#rental_category ul{margin:0;padding:0;}
+#rental_category li{width:96px;height:37px;float:left;color:#191919;text-align:center;overflow:hidden;background-color:#4987dc;border-right:1px solid #ddd;}
+#rental_category li:hover {background-color:#4a75b1;}
+#rental_category li:last-child {width:96px;}
+#rental_category a{color:#fff;text-decoration:none;font-weight:500;}
+#rental_category p{padding:9px 5px 7px 5px; font-size:14px;}
+
+
+
+.rowgroup .sub_title2 { border-bottom:1px solid #bbbbbb; width:1200px; margin:0 auto; min-height:93px; padding-top:0px;}
+.rowgroup .sub_title2 h1 { font-size:28px; font-family:'Nanum Gothic', sans-serif; line-height:0px; font-weight:bold; padding:7px 0 0px 0px;}
+.rowgroup .sub_title2 h2 { font-size:14px; font-family:'Nanum Gothic', sans-serif; color:#666666; padding:35px 0 29px 3px; line-height:0px; font-weight:bold;}
+.rowgroup .sub_title2 .navigation { text-align:right; width:100%; font-family:'Nanum Gothic', sans-serif; font-size:13px; padding-top:8px;}

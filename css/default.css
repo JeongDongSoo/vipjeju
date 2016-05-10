@@ -1,0 +1,60 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@charset "UTF-8";
+
+/* reset style [start] */
+html,body, iframe,h1, h2, h3, h4, h5, h6, p, blockquote,pre,
+q, span, dl, dt, dd, ol, ul, li, fieldset, form, input, table,tr, th ,td{margin:0;padding:0;border:0;line-height:1.5em;}
+img, fieldset{border:0 none;}
+
+/*@font-face{font-family:NanumBG;src:url('http://27.101.87.16/common/font/NanumBarunGothic.eot');src:local(※),url('http://27.101.87.16/common/font/NanumBarunGothic.woff') format('woff')}*/
+/* 나눔 바른 고딕 */
+@font-face{font-family:'NanumBG';src:url("http://27.101.87.16/common/font/NanumBarunGothic.eot");/* ie6, ie9호환성보기*/src:url("http://27.101.87.16/common/font/NanumBarunGothic.eot?#iefix") format('embedded-opentype'),/* ie7,8 */url("http://27.101.87.16/common/font/NanumBarunGothic.woff") format('woff'),/* Crome */url("http://27.101.87.16/common/font/NanumBarunGothic.ttf") format('truetype');}
+/* 나눔명조 */
+@font-face{font-family:'NanumMJ';src:url("http://27.101.87.16/common/font/NanumMyeongjo.eot");/* ie6, ie9호환성보기*/src:url("http://27.101.87.16/common/font/NanumMyeongjo.eot?#iefix") format('embedded-opentype'),/* ie7,8 */url("http://27.101.87.16/common/font/NanumMyeongjo.woff") format('woff'),/* Crome */url("http://27.101.87.16/common/font/NanumMyeongjo.ttf") format('truetype');}
+/* 서울한강 볼드  */
+@font-face{font-family:'SeoulHB';src:url("http://27.101.87.16/common/font/SeoulHangangB.eot");/* ie6, ie9호환성보기*/src:url("http://27.101.87.16/common/font/SeoulHangangB.eot?#iefix") format('embedded-opentype'),/* ie7,8 */url("http://27.101.87.16/common/font/SeoulHangangB.woff") format('woff'),/* Crome */url("http://27.101.87.16/common/font/SeoulHangangB.ttf") format('truetype');}
+/* 나눔펜 볼드  */
+@font-face{font-family:'NanumP';src:url("http://27.101.87.16/common/font/NanumPen.eot");/* ie6, ie9호환성보기*/src:url("http://27.101.87.16/common/font/NanumPen.eot?#iefix") format('embedded-opentype'),/* ie7,8 */url("http://27.101.87.16/common/font/NanumPen.woff") format('woff'),/* Crome */url("http://27.101.87.16/common/font/NanumPen.ttf") format('truetype');}
+/* open Sans */
+@font-face{font-family:'openS';src:url("http://27.101.87.16/common/font/OpenSans.eot");/* ie6, ie9호환성보기*/src:url("http://27.101.87.16/common/font/OpenSans.eot?#iefix") format('embedded-opentype'),/* ie7,8 */url("http://27.101.87.16/common/font/OpenSans.woff") format('woff'),/* Crome */url("http://27.101.87.16/common/font/OpenSans.ttf") format('truetype');}
+/* open Sans Light */
+@font-face{font-family:'openSL';src:url("http://27.101.87.16/common/font/OpenSans-Light.eot");/* ie6, ie9호환성보기*/src:url("http://27.101.87.16/common/font/OpenSans-Light.eot?#iefix") format('embedded-opentype'),/* ie7,8 */url("http://27.101.87.16/common/font/OpenSans-Light.woff") format('woff'),/* Crome */url("http://27.101.87.16/common/font/OpenSans-Light.ttf") format('truetype');}
+
+body{position:relative;font-size:13px;line-height:1.8em;color:#383838;font-family: 'Nanum Gothic', sans-serif;-webkit-text-size-adjust:none;}
+
+strong{font-weight:600;}
+em,dfn,cite,address{font-style:normal;}
+sup,sub{font-size:0.92em;}
+del{text-decoration:line-through;}
+button{cursor:pointer;border:none;background:none}
+button::-moz-focus-inner{border:0;padding:0;}
+span.button,img.button,a.button{vertical-align:middle;}
+ol, ul, li{list-style:none;}
+table{border-collapse:collapse;border-spacing:0;}
+legend{position:absolute;overflow:hidden;height:0;width:0;font-size:0;line-height:0;text-indent:-9999px;}
+table caption{position:absolute;overflow:hidden;height:0;width:0;font-size:0;line-height:0;text-indent:-9999px;}
+hr{display:none;}
+
+a:link{color:#222222;text-decoration:none;}
+a:visited{color:#222222;text-decoration:none;}
+a:hover{color:#222222;text-decoration:none;}
+a:active{color:#222222;text-decoration:none;}
+
+.clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;margin:0;padding:0;font-size:0;line-height:0;}
+.clearfix{display:inline-block;}
+* html .clearfix{height:1%;}
+.clearfix{display:block;}
+.clear{clear:both;}
+.skip{position:absolute;overflow:hidden;height:0;width:0;font-size:0;line-height:0;text-indent:-9999px;}
+/* 입력 form */
+input{vertical-align:middle}
+input[type="text"]{padding:1px;margin:1px 0;border:solid 1px #dedede;height:22px;line-height:22px;font-size:12px;}
+input[type="password"]{padding:1px;margin:1px 0;border:solid 1px #dedede;height:22px;line-height:22px;font-size:12px;font-family:"나눔 바른 고딕","NanumBarunGothic","NanumBG","맑은 고딕","Malgun Gothic","돋움","dotum";}
+input[type="file"]{padding:1px;margin:1px 0;border:solid 1px #dedede;background:#fff;height:22px;line-height:22px;font-size:12px;font-family:"나눔 바른 고딕","NanumBarunGothic","NanumBG","맑은 고딕","Malgun Gothic","돋움","dotum";}
+input[type="submit"]{font-size:12px;font-family:"나눔 바른 고딕","NanumBarunGothic","NanumBG","맑은 고딕","Malgun Gothic","돋움","dotum";/*background-color:transparent;*/cursor:pointer;}
+select{padding:1px;margin:1px 0;border:solid 1px #dedede;height:26px;line-height:22px;font-size:12px;font-family:"나눔 바른 고딕","NanumBarunGothic","NanumBG","맑은 고딕","Malgun Gothic","돋움","dotum";}
+textarea{padding:1px 3px;border:solid 1px #dedede;line-height:22px;font-size:12px;font-family:"나눔 바른 고딕","NanumBarunGothic","NanumBG","맑은 고딕","Malgun Gothic","돋움","dotum";}
+input[disabled="disabled"]{background:#ebebeb;color:#959595}
+select[disabled="disabled"]{background:#ebebeb;color:#959595}
+textarea{padding:5px;margin:1px 0;border:solid 1px #dedede;font-size:12px;line-height:18px;font-family:"나눔 바른 고딕","NanumBarunGothic","NanumBG","맑은 고딕","Malgun Gothic","돋움","dotum";text-align:left}
+input,select,textarea,button{font-family:"나눔 바른 고딕","NanumBarunGothic","NanumBG","맑은 고딕","Malgun Gothic","돋움","dotum";cursor:pointer;}
