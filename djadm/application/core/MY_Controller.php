@@ -27,7 +27,7 @@ class MY_Controller extends CI_Controller
 			$this->load->model('member_m');
 
 			$aSearchInfo['nMNo'] = $this->session->userdata['nMNo'];
-			$aResult = $this->member_m->get_member_info($aSearchInfo);
+			$aResult = $this->member_m->get_login_info($aSearchInfo);
 
 			$this->session->set_userdata($aResult);
 		}

@@ -3,9 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $config['aMemberItems'] = array(
 	'aRoleItems' => array(
-		"ROLE_ST_DEVELOPER"	=> "개발자",
-		"ROLE_ST_EMPLOYEE"	=> "<font color='#0033ff'>직원</font>",
-		"ROLE_ST_MEMBER"	=> "회원"
+		"1"	=> "개발자",
+		"2"	=> "<font color='#0033ff'>직원</font>",
+		"9"	=> "<font color='#ff0000'>퇴사</font>"
 	),
 	'aSexItems' => array(
 		"1"	=> "남",

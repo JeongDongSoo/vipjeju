@@ -18,7 +18,9 @@ class Config extends MY_Controller
 		//$this->output->cache(1);	// 캐쉬는 분단위로 생성 함
 		$this->load->helper(array("form", "date", "paging"));
 		$this->load->model('member_m');
-		$this->load->config("items/member_i", TRUE);	// items 로드
+		$this->load->config("items/member_i", TRUE);	// 회원 관련 items 로드
+
+		$aMemInfo = TRUE;
 
 		// 검색어 초기화
 		$sSearchKey = $this->input->post('sSearchKey', TRUE);
@@ -30,6 +32,9 @@ class Config extends MY_Controller
 		// 페이징 정보
 		$aPagingInfo = getPagingList(6, $nTotalRow);
 
+		//if (trim($this->uri->segment(4)) !== '')
+		//	$aMemInfo = $this->member_m->get_member_info($this->uri->segment(4));
+
 		$this->data += array(
 			'pagination' 	=> $aPagingInfo['oPagination'],
 			'nPage' 	=> $aPagingInfo['nPage'],
@@ -37,6 +42,7 @@ class Config extends MY_Controller
 			'sSearchWord' => $sSearchWord,
 			'aMemberItems'=> $this->config->item('aMemberItems', 'items/member_i'),
 			'sCurrentClass'=> $this->router->directory . $this->router->class,
+			'aMemInfo'	=> $aMemInfo,
 			'list' 		=> $this->member_m->get_member_list('', $aPagingInfo['nStart'], $aPagingInfo['nLimit'], $sSearchKey, $sSearchWord)
 		);
 

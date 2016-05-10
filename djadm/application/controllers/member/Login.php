@@ -34,7 +34,7 @@ class Login extends MY_Controller
 			$this->load->model("member_m");
 
 			$aSearchInfo = array('sMId' => $this->input->post('m_id', TRUE), 'sMPw' => $this->input->post('m_pw', TRUE));
-			$aResult = $this->member_m->get_member_info($aSearchInfo);
+			$aResult = $this->member_m->get_login_info($aSearchInfo);
 
 			if ($aResult)
 			{

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	// 로그인 처리
-	$('#btnLoginAction').click(function() {
+	/*$('#btnLoginAction').click(function() {
 		var bCheckFlag = true;
 		var strReg = /^[A-Za-z0-9]+$/;
 
@@ -23,7 +23,7 @@ $(document).ready(function() {
 			$('#memberLoginForm').submit();
 		else
 			return false;
-	});
+	});*/
 
 	// 회원 검색 처리
 	$('#btnSearch').click(function() {
@@ -34,5 +34,15 @@ $(document).ready(function() {
 	$('input[name=sSearchWord]').click(function() {
 		var keycode = window.event.keyCode;
 		if(keycode == 13) $("#btnSearch").click();
+	});
+
+	/*$('#btnMemberAction').click(function() {
+		//alert($('label[for=mNoId]').html());
+		$.fn.chkFormValidate();
+		return false;
+	});*/
+
+	$('#btnMemberCancel').click(function() {
+		history.back();
 	});
 });

@@ -7,18 +7,28 @@ class Member_m extends MY_Model
 		parent::__contruct();
 	}
 
-	function get_member_info($aSearchInfo)
+	function get_login_info($aSearchInfo)
 	{
 		$this->getConnectionDB();
 
 		if (isset($aSearchInfo['sMId']) && trim($aSearchInfo['sMId']) !== '' && isset($aSearchInfo['sMPw']) && trim($aSearchInfo['sMPw']) !== '')
-			$sWhere = "m_id='" . $aSearchInfo['sMId'] . "' AND m_pw='" . $aSearchInfo['sMPw'] . "'";
+			$sWhere = " AND m_id='" . $aSearchInfo['sMId'] . "' AND m_pw='" . $aSearchInfo['sMPw'] . "'";
 		else if (isset($aSearchInfo['nMNo']) && trim($aSearchInfo['nMNo']) !== '')
-			$sWhere = "m_no='" . $aSearchInfo['nMNo'] . "'";
+			$sWhere = " AND m_no='" . $aSearchInfo['nMNo'] . "'";
 		else
 			return FALSE;
 
-		$sql = "SELECT m_no AS nMNo, m_name AS sMName, m_hp AS nMHp, m_role AS sMRole FROM member WHERE " . $sWhere;
+		$sql = "SELECT m_no AS nMNo, m_name AS sMName, m_hp AS nMHp, m_role AS sMRole FROM member WHERE m_role < 9 " . $sWhere;
+		$query  = $this->oMainDB->query($sql);
+
+		return $query->row_array();
+	}
+
+	function get_member_info($nMNo)
+	{
+		$this->getConnectionDB();
+
+		$sql = "SELECT * FROM member WHERE m_no = " . $nMNo;
 		$query  = $this->oMainDB->query($sql);
 
 		return $query->row_array();
@@ -32,12 +42,12 @@ class Member_m extends MY_Model
 		$sLimitQuery = '';
 
 		if ($sSearchWord != '')
-			$sWhere = ' WHERE ' . $sSearchKey . ' LIKE "%' . $sSearchWord . '%"';
+			$sWhere = ' AND ' . $sSearchKey . ' LIKE "%' . $sSearchWord . '%"';
 
 		if ($nLimit != '' OR $nOffset != '')
 			$sLimitQuery = " LIMIT " . $nOffset . ", " . $nLimit;
 
-		$sql = "SELECT * FROM member " . $sWhere . " ORDER BY m_no" . $sLimitQuery;
+		$sql = "SELECT * FROM member WHERE m_role=2 " . $sWhere . " ORDER BY m_no" . $sLimitQuery;
 		$query = $this->db->query($sql);
 
 		$result = ($sType == 'count') ? $query->num_rows() : $query->result();

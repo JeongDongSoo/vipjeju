@@ -1,7 +1,7 @@
 <script type="text/javascript">
 	var sSearchUrl = '/<?php echo $sCurrentClass . '/lists'; ?>';
 </script>
-<script src="/assets/js/member.js"></script>
+<script src="/djadm/assets/js/member.js"></script>
 
 <article>
 	<div>
@@ -45,121 +45,82 @@
 	</table>
 </article>
 
+<?php if ($aMemInfo !== FALSE) : ?>
 <article class="col-xs-offset-3">
-	<?php echo form_open('/' . $sCurrentClass . '/update', array('class' => 'form-horizontal', 'id' => 'modify_form')); ?>
+	<?php echo form_open('/' . $sCurrentClass . '/update', array('class' => 'form-horizontal', 'id' => 'memberModifyForm')); ?>
 		<div class="form-group">
-			<legend class="col-xs-8">[정동수] 회원정보</legend>
+			<legend class="col-xs-8">[<?php echo $aMemInfo['m_name']; ?>] 직원정보</legend>
 		</div>
 	    	<div class="form-group">
 		 	<label for="mNoId" class="col-md-1 col-xs-1 control-label">회원번호</label>
 		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="mNoId" value="" readonly>
+		      		<input type="text" class="form-control" id="mNoId" value="<?php echo $aMemInfo['m_no']; ?>" readonly="readonly">
 		      		<p class="help-block" id="mNoIdError">&nbsp;</p>
 		    	</div>
-		    	<label for="mSiteId" class="col-md-1 control-label">가입경로</label>
+		    	<label for="mIdId" class="col-md-1 col-xs-1 control-label">아이디</label>
 		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="mSiteId" value="" readonly>
-		      		<p class="help-block" id="mSiteIdError">&nbsp;</p>
+		      		<input type="text" class="form-control" id="mIdId" value="<?php echo $aMemInfo['m_id']; ?>" readonly="readonly">
+		      		<p class="help-block" id="mIdIdError">&nbsp;</p>
 		    	</div>
 		</div>
 		<div class="form-group">
 		 	<label for="mNameId" class="col-md-1 col-xs-1 control-label">이름</label>
 		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="mNameId" name="m_name" value="">
+		      		<input type="text" class="form-control form_validate" id="mNameId" name="m_name" value="<?php echo $aMemInfo['m_name']; ?>" alt="name">
 		      		<p class="help-block" id="mNameIdError">&nbsp;</p>
 		    	</div>
 		    	<label for="mSexId" class="col-md-1 control-label">성별</label>
 		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="inputEmail1">
+		    		<?php foreach ($aMemberItems['aSexItems'] as $s_k => $s_v) : ?>
+		      		<label class="radio-inline">
+					<input type="radio" class="form_validate" name="m_sex" id="mSexId" value="<?php echo $s_k; ?>" <?php if ($s_k == $aMemInfo['m_sex']) : ?>checked<?php endif; ?>><?php echo $s_v; ?>
+				</label>
+				<?php endforeach; ?>
 		      		<p class="help-block" id="mSexIdError">&nbsp;</p>
 		    	</div>
 		</div>
 		<div class="form-group">
-		 	<label for="mPwId" class="col-md-1 col-xs-1 control-label">비밀번호</label>
+		 	<label for="mHpId" class="col-md-1 col-xs-1 control-label">핸드폰</label>
 		    	<div class="col-md-3">
-		      		<input type="password" class="form-control" id="mPwId">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
+		      		<input type="text" class="form-control form_validate" id="mHpId" name="m_hp" value="<?php echo $aMemInfo['m_hp']; ?>" alt="phone">
+		      		<p class="help-block" id="mHpIdError">&nbsp;</p>
 		    	</div>
-		    	<label for="mRePwId" class="col-md-1 control-label">2차 PW</label>
+		    	<label for="mPhoneId" class="col-md-1 control-label">전화번호</label>
 		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="mRePwId">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
-		    	</div>
-		</div>
-		<div class="form-group">
-		 	<label for="inputEmail3" class="col-md-1 col-xs-1 control-label">생년월일</label>
-		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="inputEmail3">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
-		    	</div>
-		    	<label for="inputEmail1" class="col-md-1 control-label">이메일</label>
-		    	<div class="col-md-3">
-		      		<input type="email" class="form-control" id="inputEmail1">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
+		      		<input type="text" class="form-control" id="mPhoneId" name="m_phone" value="<?php echo $aMemInfo['m_phone']; ?>" alt="phone">
+		      		<p class="help-block" id="mPhoneIdError">&nbsp;</p>
 		    	</div>
 		</div>
 		<div class="form-group">
-		 	<label for="inputEmail3" class="col-md-1 col-xs-1 control-label">핸드폰</label>
+			<label for="mEmailId" class="col-md-1 control-label">이메일</label>
 		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="inputEmail3">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
+		      		<input type="email" class="form-control form_validate" id="mEmailId" name="m_email" value="<?php echo $aMemInfo['m_email']; ?>" alt="email">
+		      		<p class="help-block" id="mEmailIdError">&nbsp;</p>
 		    	</div>
-		    	<label for="inputEmail1" class="col-md-1 control-label">전화번호</label>
+		    	<label for="mRoleId" class="col-md-1 control-label">권한</label>
 		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="inputEmail1">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
-		    	</div>
-		</div>
-		<div class="form-group">
-		 	<label for="inputEmail3" class="col-md-1 col-xs-1 control-label">예약 책임자</label>
-		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="inputEmail3">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
-		    	</div>
-		    	<label for="inputEmail1" class="col-md-1 control-label">예약 멘토</label>
-		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="inputEmail1">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
+		    		<?php foreach ($aMemberItems['aRoleItems'] as $s_k => $s_v) : if ($s_k == 1) continue; ?>
+		      		<label class="radio-inline">
+					<input type="radio" class="form_validate" name="m_role" id="mRoleId" value="<?php echo $s_k; ?>" <?php if ($s_k == $aMemInfo['m_role']) : ?>checked<?php endif; ?>><?php echo $s_v; ?>
+				</label>
+				<?php endforeach; ?>
+		      		<p class="help-block" id="mRoleIdError">&nbsp;</p>
 		    	</div>
 		</div>
 		<div class="form-group">
-		 	<label for="inputEmail3" class="col-md-1 col-xs-1 control-label">메일수신</label>
-		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="inputEmail3">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
-		    	</div>
-		    	<label for="inputEmail1" class="col-md-1 control-label">불량고객</label>
-		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="inputEmail1">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
-		    	</div>
-		</div>
-		<div class="form-group">
-		 	<label for="inputEmail2" class="col-md-1 control-label">특이사항</label>
+		 	<label for="mEtcDescrId" class="col-md-1 control-label">특이사항</label>
 		    	<div class="col-md-7">
-		      		<input type="text" class="form-control" id="inputEmail2">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
-		    	</div>
-		</div>
-		<div class="form-group">
-		 	<label for="inputEmail3" class="col-md-1 col-xs-1 control-label">가입일</label>
-		    	<div class="col-md-3">
-		      		<input type="email" class="form-control" id="inputEmail3">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
-		    	</div>
-		    	<label for="inputEmail1" class="col-md-1 control-label">가입IP</label>
-		    	<div class="col-md-3">
-		      		<input type="email" class="form-control" id="inputEmail1">
-		      		<p class="help-block" id="memberIdError">&nbsp;</p>
+		      		<textarea name="m_etc_descr" class="form-control" rows="4" id="mEtcDescrId"><?php echo $aMemInfo['m_etc_descr']; ?></textarea>
+		      		<p class="help-block" id="mEtcDescrIdError">&nbsp;</p>
 		    	</div>
 		</div>
 
 		<div class="form-group">
 			<div class="col-md-9 text-center">
-			      	<button type="button" id="btnLoginAction" class="btn btn-primary">수 정</button>
-		        		<button class="btn" id="btnLoginCancel">취 소</button>
+			      	<button type="button" id="memberModify" class="btn btn-primary btnFormSubmit">수 정</button>
+		        		<button type="button" class="btn" id="btnMemberCancel">취 소</button>
 			</div>
       		</div>
 	</form>
 </article>
-
+<?php endif; ?>
