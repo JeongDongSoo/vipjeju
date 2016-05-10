@@ -11,7 +11,7 @@ $(document).ready(function() {
 			bCheckFlag = false;
 			$('#memberIdError').html("아이디는 영문과 숫자만 입력가능합니다.");
 		} else
-			$('#memberIdError').html('&nbsp11;');
+			$('#memberIdError').html('&nbsp;');
 
 		if ($('#memberPw').val() === '') {
 			bCheckFlag = false;
