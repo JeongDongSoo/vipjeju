@@ -1,0 +1,62 @@
+/* (주)한신정보기술 김지혜 - 2015.04.01 */
+/* Layout
+#wrapper{}
+.wrap{display:block;position:relative;width:1200px;margin:0 auto;padding:0;}
+*/
+.flag > img{vertical-align:middle;}
+#top1menu li.depth1 > a.depth1_ti:hover span,#top1menu li.depth1 > a.on span{padding-bottom:30px;background:url('../images/common/depth1_on.png') no-repeat 50% bottom;border-bottom:0px solid #0d5db7;box-sizing:border-box;color:#0d5db7;text-decoration:none;}
+#top1menu li.depth1 > a.depth1_ti.part_info:hover span,#top1menu li.depth1.part_info > a.on span{background-image:url('../images/common/part_depth1_on.png');border-color:#0d5db7;color:#0d5db7;}
+#top1menu div.top2m div.menu_bg{background-repeat:no-repeat;background-position:left bottom;}
+#top1menu div.top2m div.menu_bg > div{display:block;float:left;width:185px;height:100%;padding:45px 0 0 20px;box-sizing:border-box;}
+#top1menu div.top2m div.menu_bg > div strong{display:block;padding:0 0 23px;background:url('../images/common/tm_title_line.gif') no-repeat left bottom;color:#fff;font-size:26px;line-height:38px;}
+#top1menu div.top2m div.menu_bg > div p{margin:20px 0 0 0;color:#fff;font-size:15px;line-height:21px;}
+/* 메뉴별 타이틀 배경 및 색상 */
+#top1menu div.top2m.depth1_1 div.menu_bg{background-image:url('../images/common/tm1_depth2_bg.gif');background-color:#1b6aa2;}
+#top1menu div.top2m.depth1_2 div.menu_bg{background-image:url('../images/common/tm2_depth2_bg.gif');background-color:#588d2d;}
+/* #top1menu div.top2m.depth1_2 div.menu_bg .depth2{height:400px;} */
+#top1menu div.top2m.depth1_3 div.menu_bg{background-image:url('../images/common/tm3_depth2_bg.gif');background-color:#dd3616;}
+#top1menu div.top2m.depth1_4 div.menu_bg{background-image:url('../images/common/tm4_depth2_bg.gif');background-color:#e77529;}
+#top1menu div.top2m.depth1_5 div.menu_bg{background-image:url('../images/common/tm5_depth2_bg.gif');background-color:#d387ba;}
+#top1menu div.top2m.depth1_6 div.menu_bg{background-image:url('../images/common/tm5_depth2_bg.gif');background-color:#a563bd;}
+#top1menu div.top2m.depth1_7 div.menu_bg{background-image:url('../images/common/tm5_depth2_bg.gif');background-color:#ddc816;}
+#top1menu div.top2m.depth1_8 div.menu_bg{background-image:url('../images/common/tm5_depth2_bg.gif');background-color:#2599d5;}
+#top1menu div.top2m.depth1_9 div.menu_bg{background-image:url('../images/common/tm5_depth2_bg.gif');background-color:#28b18f;}
+
+#top1menu div.top2m div.menu_bg ul.depth2{display:inline-block;float:left;width:810px;min-height:240px;margin:0;padding:10px  9px;}
+#top1menu ul.depth2 > li > a{height:20px;border:0;}
+#top1menu .depth1_1 ul.depth2 > li > a{background-color:#1b6aa2;}
+#top1menu .depth1_2 ul.depth2 > li > a{background-color:#588d2d;}
+#top1menu .depth1_3 ul.depth2 > li > a{background-color:#dd3616;}
+#top1menu .depth1_4 ul.depth2 > li > a{background-color:#e77529;}
+#top1menu .depth1_5 ul.depth2 > li > a{background-color:#d387ba;}
+#top1menu .depth1_6 ul.depth2 > li > a{background-color:#a563bd;}
+#top1menu .depth1_7 ul.depth2 > li > a{background-color:#ddc816;}
+#top1menu .depth1_8 ul.depth2 > li > a{background-color:#2599d5;}
+#top1menu .depth1_9 ul.depth2 > li > a{background-color:#28b18f;}
+
+#top1menu ul.depth2 > li:nth-child(1) > ul,#top1menu ul.depth2 > li:nth-child(2) > ul,#top1menu ul.depth2 > li:nth-child(3) > ul,#top1menu ul.depth2 > li:nth-child(4) > ul{min-height:200px;}
+#top1menu ul.depth2 > li:nth-child(5) > ul{min-height:250px;}
+/* 분야별 정보 */
+/*#top1menu > li.depth1.part_info > a.depth1_ti{padding-right:0;}
+#top1menu > li.depth1.part_info div.top2m{background-color:#4ab9ca;}
+#top1menu > li.depth1.part_info div.top2m div.menu_bg{background-color:#0da2b8;border:0;}
+#top1menu .depth1.part_info div.top2m div.menu_bg > div{display:none;}
+#top1menu > li.depth1.part_info div.top2m div.menu_bg ul.depth2{float:none;width:100%;min-height:0;height:95px;padding:25px 0 0 0;background:transparent;}
+#top1menu > li.depth1.part_info div.top2m div.menu_bg ul.depth2 ul{display:none;}
+#top1menu > li.depth1.part_info .depth2{}
+#top1menu > li.depth1.part_info .depth2 li{display:block;float:left;width:8.333333%;margin:0;}
+#top1menu > li.depth1.part_info .depth2 li a{height:15px;padding:50px 0 0 0;background-repeat:no-repeat;background-position:50% top;border:0;border-left:1px solid #37b1c3;color:#fff;text-align:center;}
+#top1menu > li.depth1.part_info .depth2 a.blank span{background-image:url('/common/images/template/ico_blank2.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon0 a{background-image:url('../images/common/part_icon1.png');border-left:0;}
+#top1menu > li.depth1.part_info .depth2 li.part_icon1 a{background-image:url('../images/common/part_icon2.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon2 a{background-image:url('../images/common/part_icon3.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon3 a{background-image:url('../images/common/part_icon4.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon4 a{background-image:url('../images/common/part_icon5.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon5 a{background-image:url('../images/common/part_icon6.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon6 a{background-image:url('../images/common/part_icon7.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon7 a{background-image:url('../images/common/part_icon8.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon8 a{background-image:url('../images/common/part_icon9.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon9 a{background-image:url('../images/common/part_icon10.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon10 a{background-image:url('../images/common/part_icon11.png');}
+#top1menu > li.depth1.part_info .depth2 li.part_icon11 a{background-image:url('../images/common/part_icon12.png');}*/
+

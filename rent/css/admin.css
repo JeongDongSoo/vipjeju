@@ -1,0 +1,21 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+/* 입력 테이블 */
+.discount_season { width:100%; float:left; font-family:'Nanum Gothic', sans-serif; font-size:13px;}
+.tbl_basic {margin:0px 0 0 10px; float:left; width:49%;}
+.tbl_basic table {clear:both; width:100%;border-collapse:collapse;border-spacing:0; height:40px;}
+.tbl_basic th {padding:10px 0;border:1px solid #d1dee2;background:#e5ecef;color:#383838;}
+.tbl_basic td {padding:5px 5px;line-height:1.4em;word-break:break-all}
+.tbl_basic input {vertical-align:top; font-size:14px; height:1.2em; }
+
+.tbl_basic2 { position:absolute; margin:0px 0 0 10px; float:right; left:50%; width:49%;}
+.tbl_basic2 table {clear:both; width:100%;border-collapse:collapse;border-spacing:0; height:40px;}
+.tbl_basic2 th {padding:10px 0;border:1px solid #d1dee2;background:#e5ecef;color:#383838;}
+.tbl_basic2 td {padding:5px 5px;line-height:1.4em;word-break:break-all}
+.tbl_basic2 input {vertical-align:top; font-size:14px; height:1.2em; }
+
+/* 목록 테이블 */
+.tbl_list {padding:0px 10px;}
+.tbl_list table {clear:both;width:100%;border-collapse:collapse;border-spacing:0}
+.tbl_list th {padding:5px 0; border:1px solid #d1dee2; background:#e5ecef; color:#383838; line-height:1.4em;}
+.tbl_list td {padding:5px 10px; word-break:break-all; line-height:1.4em; text-align:center;}
