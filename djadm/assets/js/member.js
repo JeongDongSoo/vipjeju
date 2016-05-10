@@ -3,6 +3,7 @@ $(document).ready(function() {
 	$('#btnLoginAction').click(function() {
 		var bCheckFlag = true;
 		var strReg = /^[A-Za-z0-9]+$/;
+
 		if ($('#memberId').val() === '') {
 			bCheckFlag = false;
 			$('#memberIdError').html("아이디를 입력하세요.");
@@ -10,13 +11,13 @@ $(document).ready(function() {
 			bCheckFlag = false;
 			$('#memberIdError').html("아이디는 영문과 숫자만 입력가능합니다.");
 		} else
-			$('#memberIdError').html('');
+			$('#memberIdError').html('&nbsp;');
 
 		if ($('#memberPw').val() === '') {
 			bCheckFlag = false;
 			$('#memberPwError').html("비밀번호를 입력하세요.");
 		} else
-			$('#memberPwError').html('');
+			$('#memberPwError').html('&nbsp;');
 
 		if (bCheckFlag === true)
 			$('#memberLoginForm').submit();

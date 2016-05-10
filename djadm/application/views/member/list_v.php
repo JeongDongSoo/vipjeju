@@ -54,88 +54,103 @@
 		 	<label for="mNoId" class="col-md-1 col-xs-1 control-label">회원번호</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="mNoId" value="" readonly>
+		      		<p class="help-block" id="mNoIdError">&nbsp;</p>
 		    	</div>
 		    	<label for="mSiteId" class="col-md-1 control-label">가입경로</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="mSiteId" value="" readonly>
+		      		<p class="help-block" id="mSiteIdError">&nbsp;</p>
 		    	</div>
 		</div>
 		<div class="form-group">
 		 	<label for="mNameId" class="col-md-1 col-xs-1 control-label">이름</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="mNameId" name="m_name" value="">
+		      		<p class="help-block" id="mNameIdError">&nbsp;</p>
 		    	</div>
-		    	<label for="inputEmail1" class="col-md-1 control-label">성별</label>
+		    	<label for="mSexId" class="col-md-1 control-label">성별</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="inputEmail1">
+		      		<p class="help-block" id="mSexIdError">&nbsp;</p>
 		    	</div>
 		</div>
 		<div class="form-group">
 		 	<label for="mPwId" class="col-md-1 col-xs-1 control-label">비밀번호</label>
 		    	<div class="col-md-3">
 		      		<input type="password" class="form-control" id="mPwId">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		    	<label for="mRePwId" class="col-md-1 control-label">2차 PW</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="mRePwId">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		</div>
 		<div class="form-group">
 		 	<label for="inputEmail3" class="col-md-1 col-xs-1 control-label">생년월일</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="inputEmail3">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		    	<label for="inputEmail1" class="col-md-1 control-label">이메일</label>
 		    	<div class="col-md-3">
 		      		<input type="email" class="form-control" id="inputEmail1">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		</div>
 		<div class="form-group">
 		 	<label for="inputEmail3" class="col-md-1 col-xs-1 control-label">핸드폰</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="inputEmail3">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		    	<label for="inputEmail1" class="col-md-1 control-label">전화번호</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="inputEmail1">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		</div>
 		<div class="form-group">
 		 	<label for="inputEmail3" class="col-md-1 col-xs-1 control-label">예약 책임자</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="inputEmail3">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		    	<label for="inputEmail1" class="col-md-1 control-label">예약 멘토</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="inputEmail1">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		</div>
 		<div class="form-group">
 		 	<label for="inputEmail3" class="col-md-1 col-xs-1 control-label">메일수신</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="inputEmail3">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		    	<label for="inputEmail1" class="col-md-1 control-label">불량고객</label>
 		    	<div class="col-md-3">
 		      		<input type="text" class="form-control" id="inputEmail1">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		</div>
-
 		<div class="form-group">
 		 	<label for="inputEmail2" class="col-md-1 control-label">특이사항</label>
 		    	<div class="col-md-7">
 		      		<input type="text" class="form-control" id="inputEmail2">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		</div>
-
 		<div class="form-group">
 		 	<label for="inputEmail3" class="col-md-1 col-xs-1 control-label">가입일</label>
 		    	<div class="col-md-3">
 		      		<input type="email" class="form-control" id="inputEmail3">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		    	<label for="inputEmail1" class="col-md-1 control-label">가입IP</label>
 		    	<div class="col-md-3">
 		      		<input type="email" class="form-control" id="inputEmail1">
+		      		<p class="help-block" id="memberIdError">&nbsp;</p>
 		    	</div>
 		</div>
 
