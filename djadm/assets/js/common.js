@@ -26,8 +26,17 @@ $(document).ready(function() {
 			if ($(this).is(':visible')) {
 				if ($.inArray($(this).attr("type"), ['text', 'email', 'password']) != -1) {
 					$(this).val($.trim($(this).val()));	// 앞뒤 공백 제거
-					if ($(this).val() == '')
-						$('#' + $(this).attr("id") + 'Error').html($('label[for=' + $(this).attr("id") + ']').html() + '을(를) 입력 바랍니다.');
+					if ($(this).val() == '') {
+						if ($(this).attr('alt') == 'confirm') {
+							var sCheId = $(this).attr("id").replace('Confirm', '');
+							if ($.trim($('#' + sCheId).val()) != '')
+								$('#' + sCheId + 'Error').html($('label[for=' + sCheId + ']').html() + ' 확인을 입력 바랍니다.');
+							else
+								$('#' + sCheId + 'Error').html('&nbsp;');
+						}
+						else
+							$('#' + $(this).attr("id") + 'Error').html($('label[for=' + $(this).attr("id") + ']').html() + '을(를) 입력 바랍니다.');
+					}
 					else {
 						if ($(this).attr('alt') == 'id') {
 							var checkId = /^[A-Za-z0-9]+$/;
@@ -61,6 +70,12 @@ $(document).ready(function() {
 								$('#' + $(this).attr("id") + 'Error').html($('label[for=' + $(this).attr("id") + ']').html() + '은(는) 형식에 맞게 입력 바랍니다.');
 							else
 								$('#' + $(this).attr("id") + 'Error').html('&nbsp;');
+						} else if ($(this).attr('alt') == 'confirm') {
+							var sCheId = $(this).attr("id").replace('Confirm', '');
+							if ($('#' + sCheId).val() != $(this).val())
+								$('#' + sCheId + 'Error').html($('label[for=' + sCheId + ']').html() + '와(과) 동일하게 입력 바랍니다.');
+							else
+								$('#' + sCheId + 'Error').html('&nbsp;');
 						}
 					}
 				}

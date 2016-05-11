@@ -1,6 +1,7 @@
 <script type="text/javascript">
 	var nPage = '<?php echo $nPage; ?>';
-	var sCurrentUrl = '<?php echo $sCurrentClass . '/lists'; ?>';
+	var sCurrentClass = '<?php echo $sCurrentClass; ?>';
+	var sCurrentUrl = sCurrentClass + '/lists';
 </script>
 <script src="/djadm/assets/js/member.js"></script>
 
@@ -8,7 +9,7 @@
 	<div>
 		<?php 	echo form_open('/' . $sCurrentClass . '/lists', array('id'=>'search_form', 'class'=>'well form-search')); ?>
 		<!--form id="member_search" method="post" class="well form-search" -->
-			<i class="icon-search"></i><select name="sSearchKey"><option value="m_id"<?php if ($sSearchKey === 'm_id') : ?> selected<?php endif; ?>>아이디</option><option value="m_name"<?php if ($sSearchKey === 'm_name') : ?> selected<?php endif; ?>>이름</option></select> <input type="text" name="sSearchWord" value="<?php echo $sSearchWord; ?>" class="input-medium search-query" /> <input type="button" value="검색" id="btnSearch" class="btn btn-primary" />
+			<i class="icon-search"></i><select name="sSearchKey"><option value="m_id"<?php if ($sSearchKey === 'm_id') : ?> selected<?php endif; ?>>아이디</option><option value="m_name"<?php if ($sSearchKey === 'm_name') : ?> selected<?php endif; ?>>이름</option></select> <input type="text" name="sSearchWord" value="<?php echo $sSearchWord; ?>" class="input-medium search-query" /> <input type="button" value="검색" id="btnSearch" class="btn btn-primary" /><?php if ($aMemInfo !== TRUE) : ?> <input type="button" value="직원추가" id="btnAddEmployee" class="btn btn-info" /><?php endif; ?>
 		</form>
 	</div>
 	<table cellspacing="0" cellpadding="0" class="table table-striped table-hover">
@@ -48,10 +49,10 @@
 
 <?php if ($aMemInfo !== FALSE) : ?>
 <article class="col-xs-offset-3">
-	<?php echo form_open($sCurrentClass . '/update', array('class' => 'form-horizontal', 'id' => 'memberModifyForm')); ?>
+	<?php	echo form_open($sCurrentClass . '/action', array('class' => 'form-horizontal', 'id' => 'memberModifyForm')); ?>
 		<input type="hidden" name="nPage" value="<?php echo $nPage; ?>" />
 		<div class="form-group">
-			<legend class="col-xs-8">[<?php echo $aMemInfo['m_name']; ?>] 직원정보</legend>
+			<legend class="col-xs-8"><?php if ($aMemInfo === TRUE) : ?>직원 추가<?php else : ?>[<?php echo $aMemInfo['m_name']; ?>] 직원정보<?php endif; ?></legend>
 		</div>
 	    	<div class="form-group">
 		 	<label for="mNoId" class="col-md-1 col-xs-1 control-label">회원번호</label>
@@ -61,7 +62,7 @@
 		    	</div>
 		    	<label for="mIdId" class="col-md-1 col-xs-1 control-label">아이디</label>
 		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="mIdId" value="<?php echo $aMemInfo['m_id']; ?>" readonly="readonly">
+		      		<input type="text" class="form-control<?php if ($aMemInfo === TRUE) : ?> form_validate<?php endif; ?>" name="m_id" id="mIdId" <?php if ($aMemInfo !== TRUE) : ?>value="<?php echo $aMemInfo['m_id']; ?>" readonly="readonly"<?php else : ?>alt="id"<?php endif; ?>>
 		      		<p class="help-block" id="mIdIdError">&nbsp;</p>
 		    	</div>
 		</div>
@@ -79,6 +80,22 @@
 				</label>
 				<?php endforeach; ?>
 		      		<p class="help-block" id="mSexIdError">&nbsp;</p>
+		    	</div>
+		</div>
+		<div class="form-group">
+		 	<label for="mPwId" class="col-md-1 col-xs-1 control-label">비밀번호</label>
+		    	<div class="col-md-3">
+		    		<label class="form-inline">
+					<input type="password" class="form-control"  id="mPwId" name="m_pw" style="width: 49%;"> <input type="password" class="form-control form_validate"  id="mPwIdConfirm" style="width: 49%;" placeholder="비밀번호 확인" alt="confirm">
+				</label>
+		      		<p class="help-block" id="mPwIdError">비밀번호 입력 시 수정 됩니다.</p>
+		    	</div>
+		    	<label for="mSecondPwId" class="col-md-1 control-label">2차 비번</label>
+		    	<div class="col-md-3">
+		    		<label class="form-inline">
+					<input type="password" class="form-control"  id="mSecondPwId" name="m_second_pw" style="width: 49%;"> <input type="password" class="form-control form_validate"  id="mSecondPwIdConfirm" style="width: 49%;" placeholder="2차 비번 확인" alt="confirm">
+				</label>
+		      		<p class="help-block" id="mSecondPwIdError">2차 비번 입력 시 수정 됩니다.</p>
 		    	</div>
 		</div>
 		<div class="form-group">
@@ -119,7 +136,7 @@
 
 		<div class="form-group">
 			<div class="col-md-9 text-center">
-			      	<button type="button" id="memberModify" class="btn btn-primary btnFormSubmit">수 정</button>
+			      	<button type="button" id="memberModify" class="btn btn-primary btnFormSubmit"><?php if ($aMemInfo === TRUE) : ?>등 록<?php else : ?>수 정<?php endif; ?></button>
 		        		<button type="button" class="btn btnFormCancel">취 소</button>
 			</div>
       		</div>

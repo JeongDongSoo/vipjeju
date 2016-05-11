@@ -5,6 +5,8 @@ class Config extends MY_Controller
 	function __construct()
 	{
 		parent::__construct();
+
+		$this->load->model('member_m');
 	}
 
 	public function index()
@@ -17,7 +19,6 @@ class Config extends MY_Controller
 		//$this->output->enable_profiler(TRUE);
 		//$this->output->cache(1);	// 캐쉬는 분단위로 생성 함
 		$this->load->helper(array("form", "date", "paging"));
-		$this->load->model('member_m');
 		$this->load->config("items/member_i", TRUE);	// 회원 관련 items 로드
 
 		$aMemInfo = FALSE;
@@ -30,10 +31,10 @@ class Config extends MY_Controller
 		$nTotalRow = $this->member_m->get_member_list('count', '', '', $sSearchKey, $sSearchWord);
 
 		// 페이징 정보
-		$aPagingInfo = getPagingList(5, $nTotalRow, 2);
+		$aPagingInfo = getPagingList(5, $nTotalRow);
 
 		if (trim($this->uri->segment(6)) !== '')
-			$aMemInfo = $this->member_m->get_member_info($this->uri->segment(6));
+			$aMemInfo = $this->uri->segment(6) !== 'insert' ? $this->member_m->get_member_info($this->uri->segment(6)) : TRUE;
 
 		$this->data += array(
 			'pagination' 	=> $aPagingInfo['oPagination'],
@@ -49,13 +50,11 @@ class Config extends MY_Controller
 		$this->layout('member/list', $this->data);
 	}
 
-	public function update()
+	public function action()
 	{
 		$this->output->enable_profiler(TRUE);
-		$this->load->model('member_m');
 
-		$update_array = array(
-			'm_no'		=> $this->input->post('m_no', TRUE),
+		$action_array = array(
 			'm_name'	=> $this->input->post('m_name', TRUE),
 			'm_sex'	=> $this->input->post('m_sex', TRUE),
 			'm_phone'	=> $this->input->post('m_phone', TRUE),
@@ -64,11 +63,42 @@ class Config extends MY_Controller
 			'm_role'	=> $this->input->post('m_role', TRUE),
 			'm_etc_descr'	=> $this->input->post('m_etc_descr', TRUE)
 		);
-		if ($update_array['m_role'] === '9')
-			$update_array['m_leave_datetime'] = date('Y-m-d H:i:s');
 
-		if ($this->member_m->update_member($update_array))
-			redirect($this->data['sBaseUrl'] . $this->router->directory . $this->router->class . '/lists/page/' . $this->input->post('nPage', TRUE));
+		if ($this->input->post('m_pw', TRUE) !== '')
+			$action_array['m_pw'] = crypt($this->input->post('m_pw', TRUE), PASS_SALT);
+		if ($this->input->post('m_second_pw', TRUE) !== '')
+			$action_array['m_second_pw'] = crypt($this->input->post('m_second_pw', TRUE), PASS_SALT);
+		if ($action_array['m_role'] === '9')
+			$action_array['m_leave_datetime'] = date('Y-m-d H:i:s');
+
+		if ($this->input->post('m_no', TRUE) === '')
+		{
+			$sActionStr = "등록";
+			$action_array['m_id'] = $this->input->post('m_id', TRUE);
+			$action_array['m_no'] = $this->member_m->get_max_mNo();
+			$bQueryFlag = $this->member_m->insert_member($action_array);
+		}
+		else
+		{
+			$sActionStr = "수정";
+			$action_array['m_no'] = $this->input->post('m_no', TRUE);
+			$bQueryFlag = $this->member_m->update_member($action_array);
+		}
+
+		$sListUrl = $this->data['sBaseUrl'] . $this->router->directory . $this->router->class . '/lists/page/' . $this->input->post('nPage', TRUE);
+	//echo $sActionStr;
+		if ($bQueryFlag)
+			alert("회원 정보를 " . $sActionStr . "했습니다.", $sListUrl);
+		else
+			alert("회원 정보 " . $sActionStr . "에 실패했습니다.", $sListUrl . "/" . $this->input->post('m_no', TRUE));
+	}
+
+	public function chkDuplicateId()
+	{
+		$chkNum = $this->member_m->chk_member_id($this->input->post('sMId', TRUE));
+
+		$this->show_json(array('nDuplNum' => $chkNum));
+		exit;
 	}
 
 	/*public function loginAction()

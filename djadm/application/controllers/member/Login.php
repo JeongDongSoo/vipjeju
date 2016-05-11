@@ -33,7 +33,7 @@ class Login extends MY_Controller
 		{
 			$this->load->model("member_m");
 
-			$aSearchInfo = array('sMId' => $this->input->post('m_id', TRUE), 'sMPw' => $this->input->post('m_pw', TRUE));
+			$aSearchInfo = array('sMId' => $this->input->post('m_id', TRUE), 'sMPw' => crypt($this->input->post('m_pw', TRUE), PASS_SALT));
 			$aResult = $this->member_m->get_login_info($aSearchInfo);
 
 			if ($aResult)

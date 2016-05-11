@@ -20,7 +20,8 @@ class MY_Controller extends CI_Controller
 		$this->sRequestMethod = $_SERVER["REQUEST_METHOD"];
 	}
 
-	public function layout($sContentView='') {
+	public function layout($sContentView='')
+	{
 		//header 사용자 정보 변경 후 바로 적용
 		if (@$this->session->userdata['bLoginFlag'] === TRUE)
 		{
@@ -38,5 +39,13 @@ class MY_Controller extends CI_Controller
 		$this->load->view($sContentView . "_v", $this->data);
 
 		$this->load->view('footer_v', $this->data);
+	}
+
+	public function show_json($aShowInfo)
+	{
+		$this->output
+		        ->set_content_type('application/json')
+		        ->set_output(json_encode($aShowInfo))
+		        ->_display();
 	}
 }

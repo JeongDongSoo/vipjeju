@@ -95,4 +95,6 @@ if (isset($_SERVER['HTTPS']) && 'on' === $_SERVER['HTTPS'])
 else
 	$sRequestScheme = 'http';
 
+// 암호화 시 사용되는 salt (절대 변경하지 말것!!!!)
+define('PASS_SALT', '$1$djp@ss79$');
 define('IMAGE_URL', $sRequestScheme . '://' . $_SERVER['HTTP_HOST']);
