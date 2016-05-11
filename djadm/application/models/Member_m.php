@@ -55,6 +55,11 @@ class Member_m extends MY_Model
 		return $result;
 	}
 
+	function update_member($arrays)
+	{
+		return $this->db->update('member', $arrays, array('m_no' => $arrays['m_no']));
+	}
+
 	/*function get_view($table, $id)
 	{
 		// 조회수 증가

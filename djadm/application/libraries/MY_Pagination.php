@@ -272,9 +272,12 @@ class MY_Pagination extends CI_Pagination {
 			}
 			else if ($this->display_first_always === TRUE OR $this->cur_page != $num_pages)
 			{
-				if ($this->use_page_numbers) $i = $num_pages;
-				else $i = (($num_pages * $this->per_page) - $this->per_page);
-
+				if ($this->use_page_numbers) {
+					$i = $num_pages;
+				}
+				else {
+					$i = (($num_pages * $this->per_page) - $this->per_page);
+				}
 				//$output .= $this->last_tag_open.'<a '.$this->_attributes.' href="'.$this->base_url.$this->prefix.$i.$this->suffix.'"> '.$this->last_link.' </a>'.$this->last_tag_close;
 				$output .= $this->last_tag_open.'<a '.$this->_attributes.' href="#" onclick="$.fn.clickPage('.$i.'); return false;"> '.$this->last_link.' </a>'.$this->last_tag_close;
 			}

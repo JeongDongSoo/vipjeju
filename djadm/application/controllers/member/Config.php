@@ -20,7 +20,7 @@ class Config extends MY_Controller
 		$this->load->model('member_m');
 		$this->load->config("items/member_i", TRUE);	// 회원 관련 items 로드
 
-		$aMemInfo = TRUE;
+		$aMemInfo = FALSE;
 
 		// 검색어 초기화
 		$sSearchKey = $this->input->post('sSearchKey', TRUE);
@@ -30,23 +30,45 @@ class Config extends MY_Controller
 		$nTotalRow = $this->member_m->get_member_list('count', '', '', $sSearchKey, $sSearchWord);
 
 		// 페이징 정보
-		$aPagingInfo = getPagingList(6, $nTotalRow);
+		$aPagingInfo = getPagingList(5, $nTotalRow, 2);
 
-		//if (trim($this->uri->segment(4)) !== '')
-		//	$aMemInfo = $this->member_m->get_member_info($this->uri->segment(4));
+		if (trim($this->uri->segment(6)) !== '')
+			$aMemInfo = $this->member_m->get_member_info($this->uri->segment(6));
 
 		$this->data += array(
 			'pagination' 	=> $aPagingInfo['oPagination'],
 			'nPage' 	=> $aPagingInfo['nPage'],
 			'sSearchKey' 	=> $sSearchKey,
-			'sSearchWord' => $sSearchWord,
+			'sSearchWord'=> $sSearchWord,
 			'aMemberItems'=> $this->config->item('aMemberItems', 'items/member_i'),
-			'sCurrentClass'=> $this->router->directory . $this->router->class,
+			'sCurrentClass'=> $this->data['sBaseUrl'] . $this->router->directory . $this->router->class,
 			'aMemInfo'	=> $aMemInfo,
 			'list' 		=> $this->member_m->get_member_list('', $aPagingInfo['nStart'], $aPagingInfo['nLimit'], $sSearchKey, $sSearchWord)
 		);
 
 		$this->layout('member/list', $this->data);
+	}
+
+	public function update()
+	{
+		$this->output->enable_profiler(TRUE);
+		$this->load->model('member_m');
+
+		$update_array = array(
+			'm_no'		=> $this->input->post('m_no', TRUE),
+			'm_name'	=> $this->input->post('m_name', TRUE),
+			'm_sex'	=> $this->input->post('m_sex', TRUE),
+			'm_phone'	=> $this->input->post('m_phone', TRUE),
+			'm_hp'		=> $this->input->post('m_hp', TRUE),
+			'm_email'	=> $this->input->post('m_email', TRUE),
+			'm_role'	=> $this->input->post('m_role', TRUE),
+			'm_etc_descr'	=> $this->input->post('m_etc_descr', TRUE)
+		);
+		if ($update_array['m_role'] === '9')
+			$update_array['m_leave_datetime'] = date('Y-m-d H:i:s');
+
+		if ($this->member_m->update_member($update_array))
+			redirect($this->data['sBaseUrl'] . $this->router->directory . $this->router->class . '/lists/page/' . $this->input->post('nPage', TRUE));
 	}
 
 	/*public function loginAction()

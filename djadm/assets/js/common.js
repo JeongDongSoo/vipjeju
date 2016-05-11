@@ -7,7 +7,7 @@ $(document).ready(function() {
 	 * Note : 페이지네이션을 추가하는 페이지에 검색폼 아이디('search_form') 와 sSearchUrl 값이 필수 존재!!
 	 ************************************************************************************************/
 	$.fn.clickPage = function(nPage) {
-		var act = sSearchUrl + '/page/' + nPage;
+		var act = sCurrentUrl + '/page/' + nPage;
 		$("#search_form").attr('action', act).submit();
 	}
 
@@ -25,6 +25,7 @@ $(document).ready(function() {
 
 			if ($(this).is(':visible')) {
 				if ($.inArray($(this).attr("type"), ['text', 'email', 'password']) != -1) {
+					$(this).val($.trim($(this).val()));	// 앞뒤 공백 제거
 					if ($(this).val() == '')
 						$('#' + $(this).attr("id") + 'Error').html($('label[for=' + $(this).attr("id") + ']').html() + '을(를) 입력 바랍니다.');
 					else {
@@ -36,7 +37,7 @@ $(document).ready(function() {
 							else
 								$('#' + $(this).attr("id") + 'Error').html('&nbsp;');
 						} else if ($(this).attr('alt') == 'name') {
-							var checkKor = /^[\u3131-\u314e|\u314f-\u3163|\uac00-\ud7a3]{2,20}$/;
+							var checkKor = /^[\u3131-\u314e|\u314f-\u3163|\uac00-\ud7a30-9]{2,20}$/;
 
 							if ($(this).val().length < 2 || !checkKor.test($(this).val()))
 								$('#' + $(this).attr("id") + 'Error').html($('label[for=' + $(this).attr("id") + ']').html() + '은(는) 한글만 두글자 이상 입력이 가능합니다.');
@@ -114,5 +115,9 @@ $(document).ready(function() {
 			$('#' + $(this).attr('id') + 'Form').submit();
 		else
 			return false;
+	});
+
+	$('.btnFormCancel').click(function() {
+		history.back();
 	});
 });

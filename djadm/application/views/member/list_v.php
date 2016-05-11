@@ -1,5 +1,6 @@
 <script type="text/javascript">
-	var sSearchUrl = '/<?php echo $sCurrentClass . '/lists'; ?>';
+	var nPage = '<?php echo $nPage; ?>';
+	var sCurrentUrl = '<?php echo $sCurrentClass . '/lists'; ?>';
 </script>
 <script src="/djadm/assets/js/member.js"></script>
 
@@ -25,7 +26,7 @@
 		</thead>
 		<tbody>
 			<?php foreach ($list as $lt) : ?>
-			<tr>
+			<tr class="sel_member" id="<?php echo $lt->m_no; ?>">
 				<td scope="row"><?php echo $lt->m_no;?></td>
 				<td scope="row"><?php echo $lt->m_id;?></td>
 				<td><?php echo $lt->m_name;?></td>
@@ -47,14 +48,15 @@
 
 <?php if ($aMemInfo !== FALSE) : ?>
 <article class="col-xs-offset-3">
-	<?php echo form_open('/' . $sCurrentClass . '/update', array('class' => 'form-horizontal', 'id' => 'memberModifyForm')); ?>
+	<?php echo form_open($sCurrentClass . '/update', array('class' => 'form-horizontal', 'id' => 'memberModifyForm')); ?>
+		<input type="hidden" name="nPage" value="<?php echo $nPage; ?>" />
 		<div class="form-group">
 			<legend class="col-xs-8">[<?php echo $aMemInfo['m_name']; ?>] 직원정보</legend>
 		</div>
 	    	<div class="form-group">
 		 	<label for="mNoId" class="col-md-1 col-xs-1 control-label">회원번호</label>
 		    	<div class="col-md-3">
-		      		<input type="text" class="form-control" id="mNoId" value="<?php echo $aMemInfo['m_no']; ?>" readonly="readonly">
+		      		<input type="text" class="form-control" id="mNoId" name="m_no" value="<?php echo $aMemInfo['m_no']; ?>" readonly="readonly">
 		      		<p class="help-block" id="mNoIdError">&nbsp;</p>
 		    	</div>
 		    	<label for="mIdId" class="col-md-1 col-xs-1 control-label">아이디</label>
@@ -97,7 +99,7 @@
 		      		<input type="email" class="form-control form_validate" id="mEmailId" name="m_email" value="<?php echo $aMemInfo['m_email']; ?>" alt="email">
 		      		<p class="help-block" id="mEmailIdError">&nbsp;</p>
 		    	</div>
-		    	<label for="mRoleId" class="col-md-1 control-label">권한</label>
+		    	<label for="mRoleId" class="col-md-1 control-label">구분</label>
 		    	<div class="col-md-3">
 		    		<?php foreach ($aMemberItems['aRoleItems'] as $s_k => $s_v) : if ($s_k == 1) continue; ?>
 		      		<label class="radio-inline">
@@ -118,7 +120,7 @@
 		<div class="form-group">
 			<div class="col-md-9 text-center">
 			      	<button type="button" id="memberModify" class="btn btn-primary btnFormSubmit">수 정</button>
-		        		<button type="button" class="btn" id="btnMemberCancel">취 소</button>
+		        		<button type="button" class="btn btnFormCancel">취 소</button>
 			</div>
       		</div>
 	</form>
